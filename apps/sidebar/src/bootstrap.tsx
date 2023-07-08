@@ -3,19 +3,18 @@ import { createRoot } from "react-dom/client";
 
 const Hello = () => <h1>Hello from React - Sidebar</h1>;
 
-const mount = (el:string) => {
-  const container = document.getElementById(el)!;
-  const root = createRoot(container);
+const mount = (el: Element) => {
+  const root = createRoot(el);
 
   root.render(<Hello />);
-}
+};
 
-if (process.env.NODE_ENV === 'development') {
-  const container = document.getElementById('main')!;
+if (process.env.NODE_ENV === "development") {
+  const devRoot = document.querySelector("#main");
 
-  if (container) {
-    mount('main')
+  if (devRoot) {
+    mount(devRoot);
   }
 }
 
-export {mount}
+export { mount };

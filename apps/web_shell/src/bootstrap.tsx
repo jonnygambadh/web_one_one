@@ -1,10 +1,11 @@
 import React from "react";
 import { createRoot } from "react-dom/client";
-import { mount } from "sidebar/Main";
+import SidebarPlugin from "./components/SidebarPlugin";
 
-console.log('mount: ', mount);
-
-const Hello = () => <h1>Hello from React - Shell!</h1>;
+const Hello = () => <main>
+<h1>Hello from React - Shell!</h1>
+<SidebarPlugin />
+</main>;
 
 const container = document.getElementById("root")!;
 const root = createRoot(container);
