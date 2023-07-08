@@ -1,6 +1,6 @@
 const path = require("path");
 
-const {merge} = require('webpack-merge')
+const { merge } = require("webpack-merge");
 const commonConfig = require("./webpack.common");
 const HtmlWebpackPlugin = require("html-webpack-plugin");
 
@@ -15,12 +15,12 @@ const devConfig = {
   devServer: {
     port: 3000,
     historyApiFallback: {
-      index: true
+      index: true,
     },
     static: {
       directory: path.join(__dirname, "dist"),
     },
-  }
+  },
 };
 
-module.exports=merge(commonConfig,devConfig)
+module.exports = merge(commonConfig, devConfig);
