@@ -14,6 +14,7 @@ const devConfig = {
       remotes: {
         sidebar: "sidebar@http://localhost:3001/remoteEntry.js",
       },
+      shared: ["react", "react-dom"]
     }),
     new HtmlWebpackPlugin({
       template: path.join(__dirname, "public", "index.html"),

@@ -15,6 +15,8 @@ const devConfig = {
       exposes: {
         "./Main": "./src/bootstrap",
       },
+            shared: ["react", "react-dom"],
+
     }),
     new HtmlWebpackPlugin({
       template: path.join(__dirname, "public", "index.html"),
