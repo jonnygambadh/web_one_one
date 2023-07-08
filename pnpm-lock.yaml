@@ -56,6 +56,9 @@ importers:
       html-webpack-plugin:
         specifier: ^5.5.3
         version: 5.5.3(webpack@5.88.1)
+      prettier:
+        specifier: ^3.0.0
+        version: 3.0.0
       react:
         specifier: ^18.2.0
         version: 18.2.0
@@ -1768,6 +1771,12 @@ packages:
     engines: {node: '>=8'}
     dependencies:
       find-up: 4.1.0
+    dev: true
+
+  /prettier@3.0.0:
+    resolution: {integrity: sha512-zBf5eHpwHOGPC47h0zrPyNn+eAEIdEzfywMoYn2XPi0P44Zp0tSq64rq0xAREh4auw2cJZHo9QUob+NqCQky4g==}
+    engines: {node: '>=14'}
+    hasBin: true
     dev: true
 
   /pretty-error@4.0.0:
