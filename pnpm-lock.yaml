@@ -9,6 +9,10 @@ importers:
   .: {}
 
   apps/sidebar:
+    dependencies:
+      '@types/node':
+        specifier: ^20.4.1
+        version: 20.4.1
     devDependencies:
       '@types/react':
         specifier: ^18.2.14
@@ -19,6 +23,9 @@ importers:
       html-webpack-plugin:
         specifier: ^5.5.3
         version: 5.5.3(webpack@5.88.1)
+      prettier:
+        specifier: ^3.0.0
+        version: 3.0.0
       react:
         specifier: ^18.2.0
         version: 18.2.0
@@ -40,6 +47,9 @@ importers:
       webpack-dev-server:
         specifier: ^4.15.1
         version: 4.15.1(webpack-cli@5.1.4)(webpack@5.88.1)
+      webpack-merge:
+        specifier: ^5.9.0
+        version: 5.9.0
 
   apps/web_shell:
     dependencies:
