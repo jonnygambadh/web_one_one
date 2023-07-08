@@ -3,7 +3,6 @@ const HtmlWebpackPlugin = require("html-webpack-plugin");
 
 module.exports = {
   entry: "./src/index.ts",
-  mode: 'production',
   output: {
     filename: "main.js",
     path: path.resolve(__dirname, "build"),
@@ -13,4 +12,10 @@ module.exports = {
       template: path.join(__dirname, "public", "index.html"),
     }),
   ],
+  devServer: {
+    static: {
+      directory: path.join(__dirname, "build"),
+    },
+    port: 3000,
+  }
 };
