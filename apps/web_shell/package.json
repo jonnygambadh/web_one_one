@@ -11,12 +11,12 @@
   "author": "",
   "license": "ISC",
   "devDependencies": {
+    "@types/node": "^20.4.1",
     "@types/react": "^18.2.14",
     "@types/react-dom": "^18.2.6",
+    "dotenv-webpack": "^8.0.1",
     "html-webpack-plugin": "^5.5.3",
     "prettier": "^3.0.0",
-    "react": "^18.2.0",
-    "react-dom": "^18.2.0",
     "ts-loader": "^9.4.4",
     "typescript": "^5.1.6",
     "webpack": "^5.88.1",
@@ -25,6 +25,8 @@
     "webpack-merge": "^5.9.0"
   },
   "dependencies": {
-    "@types/node": "^20.4.1"
+    "@sentry/react": "^7.57.0",
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0"
   }
 }
