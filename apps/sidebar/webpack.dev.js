@@ -15,7 +15,14 @@ const devConfig = {
       exposes: {
         "./Main": "./src/bootstrap",
       },
-            shared: ["react", "react-dom"],
+      shared: {
+        react: {
+          singleton: true,
+        },
+        "react-dom": {
+          singleton: true
+        }
+      },
 
     }),
     new HtmlWebpackPlugin({

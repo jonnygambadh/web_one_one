@@ -6,9 +6,12 @@ Sentry.init({
   dsn: process.env.SENTRY_DSN,
   integrations: [
     new Sentry.BrowserTracing({
-      // Set `tracePropagationTargets` to control for which URLs distributed tracing should be enabled
       tracePropagationTargets: ["localhost", /^https:\/\/yourserver\.io\/api/],
     }),
+    new Sentry.Integrations.GlobalHandlers({
+      onunhandledrejection: false,
+      onerror: false
+    })
   ],
 
   tracesSampleRate: 1.0,
