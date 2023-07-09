@@ -1,17 +1,26 @@
 import React, { useState, useEffect } from "react";
 import { createRoot } from "react-dom/client";
 
-const Hello = ({ span, transaction }: { span: any; transaction: any }) => {
-  span.finish();
-  transaction.finish();
+const Hello = ({
+  mainSpan,
+  transaction,
+}: {
+  mainSpan: any;
+  transaction: any;
+}) => {
+  React.useEffect(() => {
+    mainSpan.finish();
+    transaction.finish();
+  }, []);
+
   return <h1>Hello from React - Sidebar</h1>;
 };
 
 const DelayedHello = ({
-  span,
+  mainSpan,
   transaction,
 }: {
-  span: any;
+  mainSpan: any;
   transaction: any;
 }) => {
   const [showHello, setShowHello] = useState(false);
@@ -19,12 +28,14 @@ const DelayedHello = ({
   useEffect(() => {
     const timer = setTimeout(() => {
       setShowHello(true);
-    }, 2000);
+    }, 3000);
 
     return () => clearTimeout(timer);
   }, []);
 
-  return showHello ? <Hello span={span} transaction={transaction} /> : null;
+  return showHello ? (
+    <Hello mainSpan={mainSpan} transaction={transaction} />
+  ) : null;
 };
 
 const mount = (
@@ -42,17 +53,19 @@ const mount = (
     };
   },
 ) => {
-  const renderMainComponentspan = span.startChild({
-    op: "task",
-    description: "Render main component",
-  });
-
   span.finish();
+  const renderMainComponentspan = transaction.startChild({
+    op: "task",
+    description: "Sidebar:load:mainComponent:3",
+  });
 
   const root = createRoot(el);
 
   root.render(
-    <DelayedHello span={renderMainComponentspan} transaction={transaction} />,
+    <DelayedHello
+      mainSpan={renderMainComponentspan}
+      transaction={transaction}
+    />,
   );
 };
 
