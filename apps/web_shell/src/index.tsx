@@ -1,6 +1,6 @@
 import * as Sentry from "@sentry/react";
 
-import("./bootstrap");
+import  ("./bootstrap");
 
 Sentry.init({
   dsn: process.env.SENTRY_DSN,
@@ -10,8 +10,8 @@ Sentry.init({
     }),
     new Sentry.Integrations.GlobalHandlers({
       onunhandledrejection: false,
-      onerror: false
-    })
+      onerror: false,
+    }),
   ],
 
   tracesSampleRate: 1.0,

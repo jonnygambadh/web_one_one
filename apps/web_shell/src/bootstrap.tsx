@@ -13,7 +13,7 @@ const Hello = () => {
 
   useEffect(() => {
     const newTransaction = Sentry.startTransaction({
-      name: "Sidebar:load:transaction:3",
+      name: "Plugin:Sidebar:Transaction:3",
     });
 
     Sentry.getCurrentHub().configureScope((scope) => {
@@ -22,7 +22,7 @@ const Hello = () => {
 
     const newSpan = newTransaction.startChild({
       op: "task",
-      description: "Sidebar:load:plugin:3",
+      description: "Plugin:Sidebar:TTI:3",
     });
 
     transactionRef.current = newTransaction;

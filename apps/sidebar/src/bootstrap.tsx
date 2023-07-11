@@ -56,7 +56,7 @@ const mount = (
   span.finish();
   const renderMainComponentspan = transaction.startChild({
     op: "task",
-    description: "Sidebar:load:mainComponent:3",
+    description: "Plugin:Sidebar:FCP:3",
   });
 
   const root = createRoot(el);
