@@ -3,7 +3,7 @@ import ReactDOM from "react-dom";
 import * as Sentry from "@sentry/react";
 
 import FederatedWrapper from "./components/FederatedWrapper";
-// import ReviewsMain from "reviews/Main";
+import ReviewsMain from "reviews/Main";
 import { SdkProvider, useSdk } from "host/sdk";
 
 const SidebarPlugin = React.lazy(() => import("./components/SidebarPlugin"));
@@ -47,7 +47,7 @@ const Hello = () => {
             transaction={transactionRef.current}
           />
         )}
-        {/* <ReviewsMain /> */}
+        <ReviewsMain />
       </FederatedWrapper>
     </main>
   );
