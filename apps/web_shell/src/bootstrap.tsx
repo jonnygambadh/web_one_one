@@ -1,5 +1,5 @@
 import React, { useEffect, useRef } from "react";
-import { createRoot } from "react-dom/client";
+import ReactDOM from "react-dom";
 import * as Sentry from "@sentry/react";
 
 import FederatedWrapper from "./components/FederatedWrapper";
@@ -48,7 +48,5 @@ const Hello = () => {
   );
 };
 
-const container = document.getElementById("root")!;
-const root = createRoot(container);
+ReactDOM.render(<Hello />, document.getElementById("root"));
 
-root.render(<Hello />);

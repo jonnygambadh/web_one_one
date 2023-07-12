@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-import { createRoot } from "react-dom/client";
+import ReactDOM from "react-dom";
 
 const Hello = ({
   mainSpan,
@@ -59,13 +59,12 @@ const mount = (
     description: "Plugin:Sidebar:FCP:3",
   });
 
-  const root = createRoot(el);
-
-  root.render(
+  ReactDOM.render(
     <DelayedHello
       mainSpan={renderMainComponentspan}
       transaction={transaction}
     />,
+    el
   );
 };
 
@@ -94,3 +93,4 @@ if (process.env.NODE_ENV === "development") {
 }
 
 export { mount };
+
