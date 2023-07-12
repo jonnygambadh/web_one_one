@@ -4,6 +4,8 @@ type SdkContextType = {
   getPlatform: () => string;
   pushGA4Event: (eventName: string, data: any) => void;
   t: (translation: string) => string;
+  getLocale: () => string;
+  pushGtmEventV2: (eventName: string, data: any) => void;
   createGlobalApi: () => {
     fetch: (url: string) => Promise<typeof reviews | typeof ratings>;
   };
@@ -108,6 +110,11 @@ export const SdkProvider = ({ children }: { children: React.ReactNode }) => {
       console.log("eventName: ", eventName);
       console.log("data: ", data);
     },
+    pushGtmEventV2: (eventName: string, data: any) => {
+      console.log("eventName: ", eventName);
+      console.log("data: ", data);
+    },
+    getLocale: () => "en",
     t: (translation: string) => `translated ${translation}`,
     createGlobalApi: () => {
       return {
