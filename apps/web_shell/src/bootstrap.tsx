@@ -3,7 +3,8 @@ import ReactDOM from "react-dom";
 import * as Sentry from "@sentry/react";
 
 import FederatedWrapper from "./components/FederatedWrapper";
-import ReviewsMain from "reviews/Main";
+// import ReviewsMain from "reviews/Main";
+import { SdkProvider, useSdk } from "host/sdk";
 
 const SidebarPlugin = React.lazy(() => import("./components/SidebarPlugin"));
 
@@ -11,6 +12,8 @@ const Hello = () => {
   const transactionRef = useRef<Sentry.Transaction | null>(null);
   const spanRef = useRef<Sentry.Span | null>(null);
   const [isInitialized, setIsInitialized] = React.useState(false);
+
+  const { getPlatform } = useSdk();
 
   useEffect(() => {
     const newTransaction = Sentry.startTransaction({
@@ -33,7 +36,7 @@ const Hello = () => {
 
   return (
     <main>
-      <h1>Hello from React - Shell!</h1>
+      <h1>Hello from React - Shell! {getPlatform()}</h1>
       <FederatedWrapper
         error={<div>Temporary Sidebar</div>}
         delayed={<div>Loading sidebar...</div>}
@@ -44,11 +47,15 @@ const Hello = () => {
             transaction={transactionRef.current}
           />
         )}
-
-        <ReviewsMain />
+        {/* <ReviewsMain /> */}
       </FederatedWrapper>
     </main>
   );
 };
 
-ReactDOM.render(<Hello />, document.getElementById("root"));
+ReactDOM.render(
+  <SdkProvider>
+    <Hello />
+  </SdkProvider>,
+  document.getElementById("root"),
+);

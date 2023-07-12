@@ -2,11 +2,11 @@ declare module "sidebar/Main" {
   interface MountOptions {
     sdk: {
       sentry: {
-        span:any;
-        transaction: any
-      }
+        span: any;
+        transaction: any;
       };
     };
+  }
 
   export declare function mount(
     element: HTMLElement,
@@ -14,4 +14,5 @@ declare module "sidebar/Main" {
   ): void;
 }
 
- declare module "reviews/Main"
+declare module "reviews/Main";
+declare module "host/sdk";

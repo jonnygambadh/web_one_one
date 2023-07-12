@@ -10,10 +10,14 @@ const devConfig = {
   mode: "development",
   plugins: [
     new ModuleFederationPlugin({
-      name: "web-shell",
+      name: "host",
       remotes: {
         sidebar: "sidebar@http://localhost:3001/remoteEntry.js",
         reviews: "reviews@http://localhost:3003/remoteEntry.js",
+        host: "host@http://localhost:3000/remoteEntry.js",
+      },
+      exposes: {
+        "./sdk": "./src/providers/sdkProvider",
       },
       shared: {
         react: {
