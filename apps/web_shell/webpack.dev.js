@@ -12,7 +12,8 @@ const devConfig = {
     new ModuleFederationPlugin({
       name: "web-shell",
       remotes: {
-        sidebar: "sidebar@http://localhost:3002/remoteEntry.js",
+        sidebar: "sidebar@http://localhost:3001/remoteEntry.js",
+        reviews: "reviews@http://localhost:3003/remoteEntry.js",
       },
       shared: {
         react: {

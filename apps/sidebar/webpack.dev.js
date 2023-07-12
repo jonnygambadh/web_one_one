@@ -30,7 +30,7 @@ const devConfig = {
     }),
   ],
   devServer: {
-    port: 3002,
+    port: 3001,
     historyApiFallback: {
       index: true,
     },

@@ -13,3 +13,5 @@ declare module "sidebar/Main" {
     options: MountOptions,
   ): void;
 }
+
+ declare module "reviews/Main"
