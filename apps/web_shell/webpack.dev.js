@@ -14,7 +14,7 @@ const devConfig = {
       remotes: {
         sidebar: "sidebar@http://localhost:3002/remoteEntry.js",
       },
-            shared: {
+      shared: {
         react: {
           singleton: true,
         },
@@ -22,7 +22,6 @@ const devConfig = {
           singleton: true,
         },
       },
-
     }),
     new HtmlWebpackPlugin({
       template: path.join(__dirname, "public", "index.html"),
